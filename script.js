@@ -5,13 +5,14 @@ function addUnit(save = true) {
 
     div.innerHTML = `
         <div class="unit-heading">
-        <div>
-        <h4>Unit</h4>
-        </div>
-            <button type="button" style="float:right; background:#d9534f;" onclick="removeUnit(this)">Remove Unit</button>
-            Job & Unit #: <input type="text" class="unit-num"><br>
+            <h4>Unit</h4>
+            <button type="button" style="background:#d9534f;" onclick="removeUnit(this)">Remove Unit</button>
         </div>
         <div class="unit-info">
+
+           <label>
+                Job & Unit #: <input type="text" class="unit-num">
+           </label>
             <label>
                 Build:
                 <select class="build">

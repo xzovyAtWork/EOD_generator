@@ -47,12 +47,10 @@ select {
     grid-template-columns: 1fr 1fr;
 }
 
-/* Header with collapse + remove buttons */
-.unit-header {
+.unit-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #e9f1ff;
     padding: 8px;
     border-radius: 4px;
     margin-bottom: 8px;
