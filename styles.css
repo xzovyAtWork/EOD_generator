@@ -1,0 +1,122 @@
+/* ---------- GLOBAL ---------- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f7f7f7;
+    color: #333;
+}
+
+button {
+    padding: 8px 14px;
+    border: none;
+    background: #0078d4;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+button:hover {
+    background: #005fa3;
+}
+
+input[type="text"],
+input[type="time"],
+input[type="number"],
+select {
+    padding: 6px;
+    margin: 4px 0;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* ---------- UNIT CARD ---------- */
+
+.unit {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.unit-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Header with collapse + remove buttons */
+.unit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e9f1ff;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.unit-body {
+    padding: 10px;
+    background: white;
+    border-radius: 4px;
+}
+
+/* Buttons inside unit */
+.remove-unit-btn {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.remove-unit-btn:hover {
+    background: #c9302c;
+}
+
+.collapse-btn {
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.collapse-btn:hover {
+    background: #005fa3;
+}
+
+/* ---------- POINTS ---------- */
+
+.point {
+    background: #f0f4ff;
+    border: 1px solid #c7d7ff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+/* ---------- FULL WATER OPTIONS ---------- */
+
+.full-water-options {
+    background: #fff7e6;
+    border: 1px solid #ffd27f;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* ---------- OUTPUT ---------- */
+
+#output {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    min-height: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
