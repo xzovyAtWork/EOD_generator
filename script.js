@@ -4,10 +4,8 @@ function addUnit(save = true) {
     div.className = "unit";
 
     div.innerHTML = `
-        <div class="unit-heading">
             <h4>Unit</h4>
             <button type="button" style="background:#d9534f;" onclick="removeUnit(this)">Remove Unit</button>
-        </div>
         <div class="unit-info">
 
            <label>
