@@ -9,7 +9,12 @@ export default function Output ({units}){
           {unitInfo.points.map(point => {
             return <li>
               {point.description} 
-              <b> ({point.department.slice(0,1)}, {point.category})</b> -{point.status}
+              {point.department ? 
+                <span>
+                    <b> ({point.department.slice(0,1)}, {point.category})</b>
+                     -{point.status}
+                </span>
+            : null }
             </li>}
           )}
           {unitInfo.testType === "Full Water" ? <CarryoverInfo unitInfo={unitInfo} /> : null}
@@ -30,12 +35,12 @@ export default function Output ({units}){
 }
 
 function CarryoverInfo({unitInfo}){
-    const {carryoverStatus, carryoverAttempts, dryOutComplete, testType} = unitInfo;
+    const {carryoverStatus, carryoverAttempts, dryOutComplete} = unitInfo;
 
     if(carryoverStatus == "Passed"){
         return <>
                 <li>
-                    Carryover {carryoverStatus} with {carryoverAttempts} attempt{carryoverAttempts > 1 ? "s" : ""}
+                    Carryover {carryoverStatus} in {carryoverAttempts} attempt{carryoverAttempts > 1 ? "s" : ""}
                 </li>
                 <li>Unit dry-out {dryOutComplete ? "complete" : "in progress"}</li>
             </>

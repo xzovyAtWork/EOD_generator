@@ -71,7 +71,8 @@ function PointForm({
                 })
               }
             >
-              {[
+            <option value="" disabled>--Select--</option>
+            {[
                 "Incorrect Termination",
                 "Incorrect Installation",
                 "Poor Workmanship",
@@ -79,7 +80,7 @@ function PointForm({
                 "Missing Component",
                 "Out of Stock",
                 "Adjustment",
-              ].map(option => (
+            ].map(option => (
                 <option key={option} value={option}>
                   {option}
                 </option>
@@ -96,6 +97,7 @@ function PointForm({
                 })
               }
             >
+              <option value="" disabled>--Select--</option>
               <option value="Fixed">Fixed</option>
               <option value="Not Fixed">Not Fixed</option>
               <option value="IWO Requested">
