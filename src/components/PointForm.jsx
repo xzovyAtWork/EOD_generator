@@ -49,11 +49,11 @@ function PointForm({
             >
               <option value="" disabled>--Select Dept. --</option>
             {[
-                "Assembly",
-                "Electrical",
-                "Panel Shop",
-                "Plumbing",
-                "Third Party",
+                "A",
+                "E",
+                "PS",
+                "P",
+                "TP",
               ].map(option => (
                 <option key={option} value={option}>
                   {option}

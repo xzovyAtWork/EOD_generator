@@ -11,7 +11,7 @@ export default function Output ({units}){
               {point.description} 
               {point.department ? 
                 <span>
-                    <b> ({point.department.slice(0,1)}, {point.category})</b>
+                    <b> ({point.department}, {point.category})</b>
                      -{point.status}
                 </span>
             : null }
