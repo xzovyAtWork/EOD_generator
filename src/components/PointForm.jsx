@@ -1,9 +1,11 @@
+import { useState } from "react"
 function PointForm({
     point,
     unitInfo,
     setUnitInfo,
     deletePoint,
   }) {
+    const [collapse, setCollapse] = useState(false);
     function updatePoint(updates) {
       setUnitInfo({
         ...unitInfo,
@@ -17,14 +19,19 @@ function PointForm({
   
     return (
       <div className='point'>
-        <button
-          className="removeButton"
-          id='removePoint'
-          onClick={() => deletePoint(point.id)}
-        >
-          Remove Point
-        </button>
-  
+        
+        <div>
+          <button
+            className="removeButton"
+            id='removePoint'
+            onClick={() => deletePoint(point.id)}
+          >
+            Remove Point
+          </button>
+          <button onClick={()=>setCollapse(!collapse)}>{collapse ? "Show" : "Hide"}</button>
+        </div>
+        { !collapse ?
+        <>
           <label>
             Description:
             <input
@@ -105,6 +112,8 @@ function PointForm({
               </option>
             </select>
           </label>
+        </>
+          : null }
       </div>
     )
   }
