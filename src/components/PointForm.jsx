@@ -34,6 +34,7 @@ function PointForm({
         <>
           <label>
             Description:
+          </label>
             <input
               type="text"
               value={point.description}
@@ -43,9 +44,9 @@ function PointForm({
                 })
               }
             />
-          </label>
           <label>
             Department:
+          </label>
             <select
               value={point.department}
               onChange={e =>
@@ -67,10 +68,10 @@ function PointForm({
                 </option>
               ))}
             </select>
-          </label>
           <label>
             Category:
-            <select
+          </label>
+          <select
               value={point.category}
               onChange={e =>
                 updatePoint({
@@ -93,9 +94,9 @@ function PointForm({
                 </option>
               ))}
           </select>
-          </label>
           <label>
             Status: 
+          </label>
             <select
               value={point.status}
               onChange={e =>
@@ -111,7 +112,6 @@ function PointForm({
                 IWO Requested
               </option>
             </select>
-          </label>
         </>
           : null }
       </div>

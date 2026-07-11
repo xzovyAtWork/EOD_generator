@@ -130,6 +130,7 @@ h1 {
 
 .unitForm > div {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
 }

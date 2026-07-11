@@ -34,19 +34,23 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
         { !collapse ?
         <>
           <div>
-            <label htmlFor="unitInfo">
-              Unit Info:
+            <div>
+              <label htmlFor="unitInfo">
+                Unit Info:
+              </label>
               <input
                 type="text"
                 placeholder='1234-12L'
                 value={unitInfo.serialNumber}
                 onChange={e => setUnitInfo({...unitInfo, serialNumber: e.target.value})}/>
-            </label>
-              <label>
-                Build Type:
-                <select 
-                  value={unitInfo.buildType}  
-                  onChange={ e =>  
+            </div>
+              <div>
+                <label>
+                  Build Type:
+                </label>
+                <select
+                  value={unitInfo.buildType}
+                  onChange={ e =>
                       setUnitInfo({...unitInfo, buildType: e.target.value})}
                   >
                   <option value="" disabled>--Select Build --</option>
@@ -56,68 +60,68 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
                     </option>
                   ))}
                 </select>
-              </label>
+              </div>
               <div>
                   <label htmlFor="testType">
                     Test Type:
-                      <select
-                          value={unitInfo.testType}
-                          onChange={e =>
-                          setUnitInfo({
-                              ...unitInfo,
-                              testType: e.target.value,
-                              dryOutComplete:
-                              e.target.value === "Full Water"
-                                  ? unitInfo.dryOutComplete
-                                  : false,
-                          })
-                      }>
-                      <option value="" disabled>--Select Test Type --</option>
-                      <option value="Bypass">Bypass</option>
-                      <option value="Full Water">Full Water</option>
-                    </select>
                   </label>
+                  <select
+                        value={unitInfo.testType}
+                        onChange={e =>
+                        setUnitInfo({
+                            ...unitInfo,
+                            testType: e.target.value,
+                            dryOutComplete:
+                            e.target.value === "Full Water"
+                                ? unitInfo.dryOutComplete
+                                : false,
+                        })
+                    }>
+                    <option value="" disabled>--Select Test Type --</option>
+                    <option value="Bypass">Bypass</option>
+                    <option value="Full Water">Full Water</option>
+                  </select>
                   {unitInfo.testType === "Full Water" && (
                       <div>
-                      <label htmlFor="dryOutComplete">
-                          Dry-out Complete:
-                      </label>
-                      <input
-                          type="checkbox"
-                          id="dryOutComplete"
-                          checked={unitInfo.dryOutComplete}
-                          onChange={e =>
-                              setUnitInfo({
-                                  ...unitInfo,
-                                  dryOutComplete: e.target.checked,
-                              })
-                          }
-                      />
+                        <label htmlFor="dryOutComplete">
+                            Dry-out Complete:
+                        </label>
+                        <input
+                        type="checkbox"
+                        id="dryOutComplete"
+                        checked={unitInfo.dryOutComplete}
+                        onChange={e =>
+                            setUnitInfo({
+                                ...unitInfo,
+                                dryOutComplete: e.target.checked,
+                            })}
+                        />
                       </div>
                   ) && (
                       <div className="carryoverInfo">
 
                           <label htmlFor="carryoverStatus">
                               Carryover Status:                        
-                              <select 
-                                  value={unitInfo.carryoverStatus}
-                                  onChange={ e =>
-                                      setUnitInfo({
-                                          ...unitInfo,
-                                          carryoverStatus: e.target.value,
-                                      })
-                                  }
-                              >
-                                  <option value="" disabled>--Select --</option>
-                                  {["Passed", "Failed", "In Progress"].map(option => (
-                                      <option key={option} value={option}>
-                                      {option}
-                                      </option>
-                                  ))}
-                              </select>
                           </label>
+                          <select 
+                              value={unitInfo.carryoverStatus}
+                              onChange={ e =>
+                                  setUnitInfo({
+                                      ...unitInfo,
+                                      carryoverStatus: e.target.value,
+                                  })
+                              }
+                          >
+                              <option value="" disabled>--Select --</option>
+                              {["Passed", "Failed", "In Progress"].map(option => (
+                                  <option key={option} value={option}>
+                                  {option}
+                                  </option>
+                              ))}
+                          </select>
                           <label htmlFor="carryoverAttempts">
                               Attempts:
+                          </label>
                           <input
                               type="number"
                               name="carryoverAttempts"
@@ -129,10 +133,8 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
                                       carryoverAttempts: e.target.value,
                                   })
                               }/>
-                          
-                          </label>
-                          {unitInfo.carryoverStatus == "Passed" ? <label>
-                              Dryout Complete:
+                              <label>Dryout Complete:</label>
+                          {unitInfo.carryoverStatus == "Passed" ? <>
                               <input 
                                   type="checkbox" 
                                   name="dryoutComplete" 
@@ -145,35 +147,48 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
                                       })
                                   }
                               />
-                          </label> : null }
+                          </> : null }
                       </div>
                   )}
               </div>
           </div>
           <div>
-            <label htmlFor="startTime">
-              Start time:
-              <input type="time" name="startTime" id="startTime" value={unitInfo.startTime} onChange={e =>  setUnitInfo({...unitInfo, startTime: e.target.value})}/>
-            </label>
-            <label htmlFor="endTime">
-              End time:
-              <input type="time" name="endTime" id="endTime" value={unitInfo.endTime} onChange={e =>  setUnitInfo({...unitInfo, endTime: e.target.value})} />
-            </label>
+            <div>
+              <label htmlFor="startTime">
+                Start time:
+              </label>
+              <input
+                type="time"
+                name="startTime"
+                id="startTime"
+                value={unitInfo.startTime}
+                onChange={e =>  setUnitInfo({...unitInfo, startTime: e.target.value})}
+                />
+            </div>
+            <div>
+              <label htmlFor="endTime">
+                End time:
+              </label>
+              <input
+              type="time"
+              name="endTime"
+              id="endTime"
+              value={unitInfo.endTime}
+              onChange={e =>  setUnitInfo({...unitInfo, endTime: e.target.value})}
+              />
+            </div>
           </div>
           <div>
-            <span>
               <label htmlFor="unitComplete">
                 Unit Complete:
               </label>
-                <input
+              <input
                 type="checkbox"
                 name="unitComplete"
                 id="unitComplete"
                 checked={unitInfo.unitComplete}
                 onChange={e =>  setUnitInfo({...unitInfo, unitComplete: e.target.checked})}
                 />
-            </span>
-            <span>
               <label htmlFor="conditionalSignoff">
                 Conditional Sign-off:
               </label>
@@ -184,7 +199,6 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
                 checked={unitInfo.conditionalSignoff}
                 onChange={e => setUnitInfo({...unitInfo, conditionalSignoff: e.target.checked})}
                 />
-            </span>
           </div>
         </>
         : null }
