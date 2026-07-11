@@ -28,6 +28,7 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
           >
             Remove Unit
           </button>
+          <h2 style={{alignSelf: "center"}}>{unitInfo.serialNumber}</h2>
           <button onClick={()=>setCollapse(!collapse)}>{collapse ? "Show" : "Hide"}</button>
         </div>
         { !collapse ?
