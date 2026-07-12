@@ -2,9 +2,9 @@ export default function Output ({units}){
     return  <div className='unitOutput' contentEditable="true">
     {units.map(unitInfo =>
       <div key={unitInfo.id}>
-        <b><u>{unitInfo.serialNumber} {unitInfo.buildType} {unitInfo.testType} (
-          {unitInfo.startTime}-{unitInfo.endTime ? unitInfo.endTime : "WIP"}
-          )</u></b>
+        <b><u>
+          {unitInfo.serialNumber} {unitInfo.buildType} {unitInfo.testType} (Started at {unitInfo.startTime}- {unitInfo.endTime ? `Completed at ${unitInfo.endTime}` : "WIP"})
+        </u></b>
         <ul className='unitPoints'>
           {unitInfo.points.map(point => {
             return <li>
