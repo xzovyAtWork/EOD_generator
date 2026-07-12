@@ -45,6 +45,11 @@ function CarryoverInfo({unitInfo}){
                 <li>Unit dry-out {dryOutComplete ? "complete" : "in progress"}</li>
             </>
     }
+    if(carryoverStatus == "In Progress"){
+      return <li>
+        Carrover {carryoverStatus}.
+      </li>
+    }
     return <li>
             Carryover {carryoverStatus} with {carryoverAttempts} attempt{carryoverAttempts > 1 ? "s" : ""}
         </li>
