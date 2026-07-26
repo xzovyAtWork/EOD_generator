@@ -189,16 +189,22 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
                 checked={unitInfo.unitComplete}
                 onChange={e =>  setUnitInfo({...unitInfo, unitComplete: e.target.checked})}
                 />
-              <label htmlFor="conditionalSignoff">
-                Conditional Sign-off:
-              </label>
-                <input
-                type="checkbox"
-                name='conditionalSignoff'
-                id='conditionalSignoff'
-                checked={unitInfo.conditionalSignoff}
-                onChange={e => setUnitInfo({...unitInfo, conditionalSignoff: e.target.checked})}
-                />
+              { 
+                unitInfo.unitComplete ? 
+                  <>
+                    <label htmlFor="conditionalSignoff">
+                      Conditional Sign-off:
+                    </label>
+                      <input
+                      type="checkbox"
+                      name='conditionalSignoff'
+                      id='conditionalSignoff'
+                      checked={unitInfo.conditionalSignoff}
+                      onChange={e => setUnitInfo({...unitInfo, conditionalSignoff: e.target.checked})}
+                      />
+                    </>
+                : null 
+              }
           </div>
         </>
         : null }

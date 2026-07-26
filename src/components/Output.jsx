@@ -3,7 +3,12 @@ export default function Output ({units}){
     {units.map(unitInfo =>
       <div key={unitInfo.id}>
         <b><u>
-          {unitInfo.serialNumber} {unitInfo.buildType} {unitInfo.testType} (Started at {unitInfo.startTime}-{unitInfo.endTime ? `Completed at ${unitInfo.endTime}` : "WIP"})
+          {unitInfo.serialNumber} 
+          {unitInfo.buildType} 
+          {unitInfo.testType} 
+          (
+            Started at {unitInfo.startTime ? `Started at ${unitInfo.startTime}` : "WIP"}-{unitInfo.endTime ? `Completed at ${unitInfo.endTime}` : "WIP"}
+          )
         </u></b>
         <ul className='unitPoints'>
           {unitInfo.points.length === 0 ? <li>No issues found</li> : null}
