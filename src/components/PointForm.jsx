@@ -28,6 +28,7 @@ function PointForm({
           >
             Remove Point
           </button>
+          <span className="pointPreview">{(point.description).slice(0,10)}... {point.status}</span>
           <button onClick={()=>setCollapse(!collapse)}>{collapse ? "Show" : "Hide"}</button>
         </div>
         { !collapse ?

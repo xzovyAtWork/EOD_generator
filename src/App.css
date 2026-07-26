@@ -35,7 +35,6 @@ body {
     #0f172a 0%,
     #1e293b 100%
   );
-  color: white;
 }
 
 #root {
@@ -222,15 +221,15 @@ button{
 
 .point {
   display: grid;
-  /* grid-template-columns: repeat(
-    auto-fit,
-    minmax(220px, 1fr)
-  ); */
   margin-top: 1rem;
   background: #f8fafc;
   padding: 1rem;
   border-radius: 16px;
   border: 1px solid var(--border);
+}
+
+.pointPreview{
+  padding: 0.5em;
 }
 
 /* ===== OUTPUT REPORT ===== */
