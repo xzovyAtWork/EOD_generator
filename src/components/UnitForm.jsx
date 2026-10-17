@@ -112,8 +112,8 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
                                   })
                               }
                           >
-                              <option value="" disabled>--Select --</option>
-                              {["Passed", "Failed", "In Progress"].map(option => (
+                              {/* <option value="" disabled>--Select --</option> */}
+                              {["Not Started", "In Progress","Passed", "Failed"].map(option => (
                                   <option key={option} value={option}>
                                   {option}
                                   </option>

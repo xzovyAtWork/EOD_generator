@@ -43,6 +43,7 @@ export default function Output ({units}){
 
 function CarryoverInfo({unitInfo}){
     const {carryoverStatus, carryoverAttempts, dryOutComplete} = unitInfo;
+    if(carryoverStatus == "Not Started") return
 
     if(carryoverStatus == "Passed"){
         return <>
