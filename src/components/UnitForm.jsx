@@ -13,7 +13,7 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
   }
  
   return (
-    <div className="unit">
+    <div className="unit" style={{"backgroundColor": "rgb(1, 7, 41)", "margin": "1em"}}>
       <div className="unitForm">
         <div>
           <button
@@ -31,6 +31,7 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
           <h2 style={{alignSelf: "center", color: "white"}}>{unitInfo.serialNumber}</h2>
           <button onClick={()=>setCollapse(!collapse)}>{collapse ? "Show" : "Hide"}</button>
         </div>
+          
         { !collapse ?
         <>
           <div>
@@ -209,6 +210,7 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
         </>
         : null }
       </div>
+      <div style={{"padding": "1em"}}>
       { !collapse ?
       <>
         <div>
@@ -245,6 +247,7 @@ function UnitForm({unitInfo, setUnitInfo, deleteUnit}){
         </button>
       </>
       : null }
+      </div>
     </div>
   )
 }
