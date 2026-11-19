@@ -9,7 +9,9 @@ export default function Output ({units}){
           {"\u00a0"}
           {unitInfo.testType}
           {"\u00a0"} 
-          ({unitInfo.startTime ? `Started at ${unitInfo.startTime}` : "WIP"}-{unitInfo.endTime ? `Completed at ${unitInfo.endTime}` : "WIP"})
+          {unitInfo.startTime || unitInfo.endTime ? <span>({ 
+            unitInfo.startTime ? `Started at ${unitInfo.startTime}` : "WIP"}-{unitInfo.endTime ? `Completed at ${unitInfo.endTime}` : "WIP"
+            })</span> : ""}
         </u></b>
         <ul className='unitPoints'>
           {unitInfo.points.length === 0 ? <li>No issues found</li> : null}
